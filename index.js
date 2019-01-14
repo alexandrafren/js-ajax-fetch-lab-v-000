@@ -5,19 +5,22 @@ function getToken() {
 }
 
 function forkRepo() {
+  const owner = 'alexandrafren'
   const repo = 'learn-co-curriculum/js-ajax-fetch-lab';
   //use fetch to fork it!
-  fetch(repo,{
+  fetch('/repos/${owner}/${repo}/forks',{
     method: 'POST'
     headers: {
       Authorization: 'token ${getToken()}'
     }
   }).then(response => response.json())
   .then(json => showResults(json))
-};
+}
 
+https://github.com/AAM77/js-ajax-hitting-apis-lab-v-000/blob/master/js/index.js
 function showResults(json) {
   //use this function to display the results from forking via the API
+  const display = 'https://'
 }
 
 function createIssue() {
