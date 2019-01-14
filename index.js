@@ -52,3 +52,11 @@ function getIssues() {
     }
 }).then(res => res.json()).then(json => showIssues(json))
 }
+
+function showIssues(issues) {
+ let issue = issues.map(function(issue) {
+    $('#issues').append(
+      `<h3>${issue.title}</h3><p<${issue.body}</p>`
+      )
+ })
+}
