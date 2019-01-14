@@ -19,7 +19,7 @@ function forkRepo() {
 https://github.com/AAM77/js-ajax-hitting-apis-lab-v-000/blob/master/js/index.js
 function showResults(json) {
   //use this function to display the results from forking via the API
-  const display = 'https://github.com/${json.full_name}';
+  const display = '<a href="${json.html_url}">${json.name}</a>';
   document.getElementById('results').innerHTML = display;
 }
 
