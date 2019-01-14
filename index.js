@@ -5,10 +5,9 @@ function getToken() {
 }
 
 function forkRepo() {
-  const owner = 'alexandrafren'
   const repo = 'learn-co-curriculum/js-ajax-fetch-lab';
   //use fetch to fork it!
-  fetch('/repos/${owner}/${repo}/forks',{
+  fetch('/repos/${repo}/forks',{
     method: 'POST'
     headers: {
       Authorization: 'token ${getToken()}'
