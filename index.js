@@ -7,13 +7,12 @@ function getToken() {
 function forkRepo() {
   const repo = 'learn-co-curriculum/js-ajax-fetch-lab';
   //use fetch to fork it!
-  fetch('https://api.gitub.com/repos/${repo}/forks', {
+  fetch(`https://api.github.com/repos/${repo}/forks`, {
     method: 'post',
     headers: {
-      Authorization: 'token ${getToken()}'
+      Authorization: `token ${getToken()}`
     }
-  }).then(res => res.json())
-  .then(json => showResults(json))
+}).then(res => res.json()).then(json => showResults(json))
 }
 
 https://github.com/AAM77/js-ajax-hitting-apis-lab-v-000/blob/master/js/index.js
