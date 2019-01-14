@@ -24,6 +24,23 @@ function showResults(json) {
 
 function createIssue() {
   //use this function to create an issue based on the values input in index.html
+const repo = 'alexandrafren/js-ajax-fetch-lab'
+let body = document.getElementById("body").value
+let title = document.getElementById("title").value
+
+let postIssues = {
+  title: title,
+  body: body
+}
+
+fetch(`https://api.github.com/repos/${repo}/issues`, {
+  method: "post",
+  body: JSON.stringify(postIssues),
+  headers: {
+    Authorization: `token ${getToken()}`
+  }
+}).then(res => getIssues())
+
 }
 
 function getIssues() {
