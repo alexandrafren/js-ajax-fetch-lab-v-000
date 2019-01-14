@@ -45,4 +45,10 @@ fetch(`https://api.github.com/repos/${repo}/issues`, {
 
 function getIssues() {
   //once an issue is submitted, fetch all open issues to see the issues you are creating
+  const repo = 'alexandrafren/js-ajax-fetch-lab'
+   fetch(`https://api.github.com/repos/${repo}/issues`, {
+    headers: {
+      Authorization: `token ${getToken()}`
+    }
+}).then(res => res.json()).then(json => showIssues(json))
 }
